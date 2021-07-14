@@ -157,7 +157,7 @@ abstract class IntX implements Comparable<dynamic> {
   /// Returns a byte-sequence representation of this integer.
   ///
   /// Returns a list of int, starting with the least significant byte.
-  List<int> toBytes();
+  List<int?> toBytes();
 
   /// Returns the double representation of this integer.
   ///

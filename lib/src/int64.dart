@@ -443,7 +443,7 @@ class Int64 implements IntX {
   /// given object.  The argument may be an [int] or an [IntX].
   @override
   bool operator ==(other) {
-    Int64 o;
+    Int64? o;
     if (other is Int64) {
       o = other;
     } else if (other is int) {
@@ -630,8 +630,8 @@ class Int64 implements IntX {
   }
 
   @override
-  List<int> toBytes() {
-    List<int> result = List<int>(8);
+  List<int?> toBytes() {
+    List<int?> result = List<int?>.filled(8, 0);
     result[0] = _l & 0xff;
     result[1] = (_l >> 8) & 0xff;
     result[2] = ((_m << 6) & 0xfc) | ((_l >> 16) & 0x3f);
