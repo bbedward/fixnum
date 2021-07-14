@@ -146,18 +146,12 @@ class Int32 implements IntX {
   // Int32 % Int64 => Int32
 
   @override
-  IntX operator +(other) {
-    if (other is Int64) {
-      return toInt64() + other;
-    }
+  Int32 operator +(other) {
     return Int32(_i + _toInt(other));
   }
 
   @override
-  IntX operator -(other) {
-    if (other is Int64) {
-      return toInt64() - other;
-    }
+  Int32 operator -(other) {
     return Int32(_i - _toInt(other));
   }
 
@@ -165,10 +159,7 @@ class Int32 implements IntX {
   Int32 operator -() => Int32(-_i);
 
   @override
-  IntX operator *(other) {
-    if (other is Int64) {
-      return toInt64() * other;
-    }
+  Int32 operator *(other) {
     // TODO(rice) - optimize
     return (toInt64() * other).toInt32();
   }
